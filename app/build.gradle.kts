@@ -54,4 +54,5 @@ dependencies {
 
     implementation(libs.javaxInject)
     implementation(libs.dagger.runtime)
+    implementation(libs.dagger.android)
 }

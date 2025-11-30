@@ -7,6 +7,9 @@ import dagger.multibindings.StringKey
 import dev.zacsweers.metro.AppScope
 import dev.zacsweers.metro.ContributesTo
 
+// workaround
+private const val key = ExampleConstants.CONTROLLER + DeepLinkStrategyId.ACTION_DISPLAY
+
 @Module
 @ContributesTo(AppScope::class)
 interface ExampleModule {
@@ -14,6 +17,6 @@ interface ExampleModule {
 
     @Binds
     @IntoMap
-    @StringKey(ExampleConstants.CONTROLLER + DeepLinkStrategyId.ACTION_DISPLAY)
+    @StringKey(key)
     fun provideSoftForcedUpgradePreferencesDeepLinkPath(exampleClass: ExampleClass): ExampleClassInterface
 }
